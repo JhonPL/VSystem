@@ -1,7 +1,7 @@
 """
 URL configuration for VSystem project.
 
-The `urlpatterns` list routes URLs to views. For more information please see:
+The urlpatterns list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
 Examples:
 Function views
@@ -16,9 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mainApp.views import inicio
+from mainApp.views import inicio, get_prueba
+from persona.views import get_estudiantes
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', inicio),
+    path('', inicio, name='inicio'),
+    path('lista-estudiantes/', get_estudiantes, name='lista-estudiantes'),
+    path('prueba/', get_prueba, name='Hola_prueba'),
 ]
