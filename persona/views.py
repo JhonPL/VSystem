@@ -2,12 +2,11 @@ from django.shortcuts import render, redirect
 from .models import Persona
 from .forms import PersonaForm
 
+# Vista para listar estudiantes
 def get_estudiantes(request):
-    
     estudiantes = Persona.objects.filter(rol='Estudiante')
-    
-    return render(request, 'lista-estudiantes.html',{
-        'title': 'Lista de estudiantes ',
+    return render(request, 'lista-estudiantes.html', {
+        'title': 'Lista de Estudiantes',
         'estudiantes': estudiantes
     })
 

@@ -1,14 +1,16 @@
 from django.shortcuts import render, redirect
-from .models import Curso
+from .models import curso
 from .forms import CursoForm
 
-def get_cursos(request):
-    cursos = Curso.objects.all()   
+# Vista para listar los cursos
+def get_curso(request):
+    cursos = curso.objects.all()
     return render(request, 'lista-curso.html', {
         'title': 'Lista de cursos',
-        'cursos': cursos
-        })
-    
+        'cursos': cursos,
+    })
+
+# Vista para agregar o editar cursos
 def formulario(request):
     if request.method == 'POST':
         form = CursoForm(request.POST)

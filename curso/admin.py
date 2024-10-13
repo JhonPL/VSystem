@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Curso
+from .models import curso
 from persona.models import Persona
 
-@admin.register(Curso)
+@admin.register(curso)
 class CursoAdmin(admin.ModelAdmin):
     list_display = ("id", "nombre", "capacidad_max", "profesor")
     
