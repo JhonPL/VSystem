@@ -5,7 +5,14 @@
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-success">Guardar inscripción</button>
+
+        <!-- Contenedor para los botones -->
+        <div class="d-flex">
+            <!-- Botón de Guardar Estudiante -->
+            <button type="submit" class="btn btn-success w-50 me-2">Guardar Inscripcion</button>
+            <!-- Botón de Volver -->
+            <a href="{% url 'lista-estudiantes-cursos' %}" class="btn btn-secondary w-50 align-items-center justify-content-center" style="line-height: 2.25rem;">Volver</a>
+        </div>
     </form>
 
 {% endblock %}
