@@ -22,4 +22,4 @@ def formulario_estudiante(request):
     else:
         form = PersonaForm()
 
-    return render(request, 'formulario_estudiante.html', {'form': form})
+    return render(request, 'formulario_estudiantes.html', {'form': form})

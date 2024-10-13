@@ -4,10 +4,18 @@ from .forms import CursoForm
 
 # Vista para listar los cursos
 def get_curso(request):
-    cursos = curso.objects.all()
+    curso_id = request.GET.get('curso')  
+    cursos = curso.objects.all()  
+
+    if curso_id:
+        cursos_filtrados = cursos.filter(id=curso_id)  
+    else:
+        cursos_filtrados = cursos  
+
     return render(request, 'lista-curso.html', {
         'title': 'Lista de cursos',
-        'cursos': cursos,
+        'cursos': cursos,  
+        'cursos_filtrados': cursos_filtrados,  
     })
 
 # Vista para agregar o editar cursos
@@ -20,4 +28,4 @@ def formulario(request):
     else:
         form = CursoForm()
 
-    return render(request, 'formulario_curso.html', {'form': form})
+    return render(request, 'formulario-curso.html', {'form': form})
