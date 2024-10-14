@@ -3,6 +3,36 @@
 
     <h1>{{ title }}</h1>
 
+    <form method="GET" action="{% url 'lista-estudiantes-cursos' %} "class="mb-3">
+        <div>
+            <label for="estudiante">Buscar por estudiante:</label>
+            <input type="text" name="estudiante" id="estudiante" placeholder="Nombre o apellidos" value="{{ request.GET.estudiante }}">
+        </div>
+        <div>
+            <label for="curso">Buscar por curso:</label>
+            <select name="curso" id="curso">
+                <option value="">-- Seleccionar curso --</option>
+                {% for c in cursos %}
+                    <option value="{{ c.curso__id }}" {% if request.GET.curso == c.curso__id|stringformat:"s" %}selected{% endif %}>{{ c.curso__nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="estado">Buscar por estado:</label>
+            <select name="estado" id="estado">
+                <option value="">-- Seleccionar estado --</option>
+                {% for e in estados %}
+                    <option value="{{ e.estado }}" {% if request.GET.estado == e.estado %}selected{% endif %}>{{ e.estado }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit">Buscar</button>
+    </form>
+    
+    {% if request.GET.estudiante or request.GET.curso or request.GET.estado %}
+        <a href="{% url 'lista-estudiantes-cursos' %}" class="btn btn-secondary mb-3">Eliminar filtros</a>
+    {% endif %}
+
     <table class="table table-dark table-striped">
         <thead>
             <tr>
