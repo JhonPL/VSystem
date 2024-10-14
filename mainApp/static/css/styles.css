@@ -1,241 +1,234 @@
-*{
+/* Reset de estilos predeterminados */
+* {
     margin: 0px;
     padding: 0px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-decoration: none;
 }
 
-body{
-    background-color: #f2f2f2;
+body {
+    background-color: #f4f7f6; 
 }
 
-
-header{
-    width: 1212px;
+header {
+    width: 100%;
     height: 140px;
-    background-color: #686a6b;
+    background-color: #2C3E50; 
     margin: 0 auto;
-
 }
 
-
-.clearfix{
-    clear: both;
-    float: none;
-}
-
-#logotipo{
+#logotipo {
     width: 35%;
     height: 120px;
     margin: 0 auto;
     padding-top: 20px;
 }
 
-#logotipo img{
+#logotipo img {
     display: block;
     width: 90px;
     float: left;
     margin: 0 auto;
 }
 
-#logotipo h1{
+#logotipo h1 {
     display: block;
     float: left;
     margin-top: 40px;
     margin-left: 20px;
-    letter-spacing: 2px;    
-    font-weight: lighter;
-    color: #42a096;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #1ABC9C; 
 }
 
-/*barra navegacion*/
-
-nav{
-    width: 1211px;
+/* Barra de navegación */
+nav {
+    width: 100%;
     height: 40px;
     margin: 0 auto;
-    background-color: #000000;
-    border: 1px solid #090249;
-    
-    font-size: 15px;    
+    background-color: #34495E; 
+    border: 1px solid #2C3E50; 
+    font-size: 15px;
 }
 
-nav ul{
+nav ul {
     list-style: none;
-    text-decoration: none;
 }
 
-nav ul li{
+nav ul li {
     line-height: 40px;
     float: left;
 }
 
-nav ul li a{
+nav ul li a {
     display: block;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #ECF0F1; 
     text-decoration: none;
 }
 
-nav ul li a:hover{
-    background: #b4870a;
-    box-shadow: 0px 0px 5px #444 inset;
-    color: white;
-    transition: all 300ms;
+nav ul li a:hover {
+    background-color: #1ABC9C; 
+    color: #FFFFFF;
+    transition: background-color 300ms ease;
 }
 
-
-
-/*contenido centrar*/
-
-#content{
-    width: 1212px;
+/* Contenido centrado */
+#content {
+    width: 100%;
     min-height: 930px;
     margin: 0 auto;
     margin-bottom: 30px;
     margin-top: 40px;
 }
 
-.box{
+.box {
     background: white;
     width: 95%;
     min-height: 930px;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #BDC3C7; 
     margin: 0 auto;
-    border-radius: 2px;
+    border-radius: 4px;
 }
 
-.title{
-    color: #444;
-    letter-spacing: 1px;
+.title {
+    color: #2C3E50; 
     font-size: 30px;
     margin-bottom: 10px;
     margin-top: 5px;
 }
 
-footer{
-    width: 1250px;
-    background-color: #1B1E1F;
-    border: 1px solid #333;
-    color: #d1d4d6;
+footer {
+    width: 100%;
+    background-color: #34495E;
+    color: #BDC3C7;
     text-align: center;
-    margin: 0 auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    box-shadow: 0px 0px 20px gray;    
+    padding: 20px 0;
+    box-shadow: 0px 0px 10px #BDC3C7;
 }
 
-.box ul{
-    margin-left: 20px;
-}
-
-.box form{
+.box form {
     width: 50%;
-    margin: 0 auto; /* Esto centra el contenedor horizontalmente */
-    display: block; /* Asegura que el contenedor se comporte como un bloque */
+    margin: 0 auto;
 }
 
 .box form input,
-.box form label{
+.box form label {
     display: block;
-    border-radius: 3px;
-    height: 30px;
+    border-radius: 4px;
+    height: 35px;
 }
 
-.box form input{
-    width: 100%;    
-    margin-bottom: 15px;
-}
-
-.box form input[type="text"]{
-    text-transform: none;
-}
-
-.box form input[type="submit"],
-.box form input[type="submit"],
-.box form button{
-    padding: 20px 10px;
-    margin-top: 5px;
-    background: #42a096;
-    color: #1B1E1F;
+.box form input {
     width: 100%;
-    transition: 300ms all;
-    text-align:center;
-    font-size: 16px;
-    line-height: 0.3;
-    
-}
-
-.box form input[type="submit"]:hover,
-.box form input[type="submit"]:hover,
-.box form button:hover{
-    cursor: pointer;
-    background: #256b64;    
-}
-
-.box form select{
-    display: block;
-    
     margin-bottom: 15px;
-    width: 40%;
-    padding: 5px;
+    border: 1px solid #BDC3C7; 
+    padding-left: 10px;
 }
 
-.message{
+.box form input[type="submit"] {
+    padding: 15px 10px;
+    background: #1ABC9C; 
+    color: white;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    transition: 300ms all;
+}
+
+.box form input[type="submit"]:hover {
+    background: #16A085; 
+}
+
+.box form select {
+    width: 50%;
+    margin-bottom: 15px;
+    padding: 8px;
+    border: 1px solid #BDC3C7;
+    border-radius: 4px;
+}
+
+.message {
     padding: 20px;
-    background: #1f7e58;
+    background: #27AE60; 
     color: white;
     text-align: center;
-    margin-bottom: 10px;
 }
 
-.error{
+.error {
     padding: 20px;
-    background: #8f0c0c;
+    background: #E74C3C; 
     color: white;
     text-align: center;
-    margin-bottom: 10px;
 }
 
-.warning{
+.warning {
     padding: 20px;
-    background: #bb5410;
+    background: #F39C12; 
     color: white;
     text-align: center;
-    margin-bottom: 10px;
 }
 
-.article-item{
-    margin-bottom: 20 px;
+.welcome-message {
+    text-align: center;
+    margin-top: 100px;
+    color: #2C3E50;
+}
+
+.welcome-message h1 {
+    font-size: 36px;
+    color: #42a096;
+    margin-bottom: 20px;
+}
+
+.welcome-message p {
+    font-size: 18px;
+    color: #34495E;
+}
+
+#content {
+    text-align: center;
+}
+
+.welcome-message {
+    margin-bottom: 20px;
+}
+
+.welcome-image img {
+    width: 200px;  
     margin-top: 20px;
-    padding: 15px;
-    border-bottom: 1px solid #eee;
-    clear: both;
+    border-radius: 10px; 
 }
 
-.article-item .image{
-    width: 120px;
-    height: 150px;
-    float: left;
-    overflow: hidden;
+header {
+    width: 100%;
+    height: 140px; 
+    display: block; 
 }
 
-.article-item .image img{
-    height: 150px;
+#logotipo {
+    display: inline-block; 
+    height: 100%; 
+    padding-left: 20px; 
+    vertical-align: middle; 
 }
 
-.article-item .data{
-    float: left;
-    padding: 15px;
-    padding-top: 0px;
+#logotipo img {
+    height: 100%; 
+    width: 150%; 
+    display: inline-block; 
 }
 
-.title {
-    text-align: center; /* Centra el texto */
-    font-weight: bold; /* Pone el texto en negrita */
-    font-size: 24px; /* Ajusta el tamaño de la fuente según tus necesidades */
-    margin-bottom: 20px; /* Añade espacio debajo del título */
-    font-family: 'Roboto', sans-serif;
+#logotipo h1 {
+    color: white;
+    font-size: 32px;
+    margin: 0;
+    line-height: 140px; 
+    display: inline-block; 
+    margin-left: 20px; 
 }
+
+
+

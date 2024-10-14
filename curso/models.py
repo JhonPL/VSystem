@@ -7,11 +7,10 @@ class curso(models.Model):
     capacidad_max = models.IntegerField()
     profesor = models.ForeignKey(Persona, on_delete=models.SET_NULL, null=True)
     
-    # Cambiar el related_name para evitar conflicto con otros modelos
     estudiantes = models.ManyToManyField(Persona, related_name='cursos_estudiante', blank=True)  
     
     def save(self, *args, **kwargs):
-        self.full_clean()  # Valida todo el modelo antes de guardar
+        self.full_clean()  
         super().save(*args, **kwargs)
 
     def clean(self):

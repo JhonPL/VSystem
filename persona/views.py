@@ -5,16 +5,16 @@ from django.db.models import Q
 
 # Vista para listar estudiantes
 def get_estudiantes(request):
-    query = request.GET.get('q')  # Obtiene el valor del campo de búsqueda
+    query = request.GET.get('q')  
     if query:
         estudiantes = Persona.objects.filter(
-            Q(rol='Estudiante') &  # Asegúrate de que sean estudiantes
-            (Q(nombre__icontains=query) |  # Busca en nombre
-             Q(apellidos__icontains=query) |  # Busca en apellidos
-             Q(dni__icontains=query))  # Busca en DNI
+            Q(rol='Estudiante') &  
+            (Q(nombre__icontains=query) |  
+             Q(apellidos__icontains=query) |  
+             Q(dni__icontains=query))  
         )
     else:
-        estudiantes = Persona.objects.filter(rol='Estudiante')  # Muestra todos si no hay filtro
+        estudiantes = Persona.objects.filter(rol='Estudiante')  
 
     return render(request, 'lista-estudiantes.html', {
         'title': 'Lista de Estudiantes',
@@ -26,10 +26,10 @@ def formulario_estudiante(request):
     if request.method == 'POST':
         form = PersonaForm(request.POST)
         if form.is_valid():
-            estudiante = form.save(commit=False)  # No guardar aún en la base de datos
-            estudiante.rol = 'Estudiante'  # Asignar el rol predeterminado
-            estudiante.save()  # Ahora guarda el estudiante
-            return redirect('lista-estudiantes')  # Redirige a la lista de estudiantes después de guardar
+            estudiante = form.save(commit=False)  
+            estudiante.rol = 'Estudiante'  
+            estudiante.save()  
+            return redirect('lista-estudiantes')  
     else:
         form = PersonaForm()
 

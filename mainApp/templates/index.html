@@ -10,11 +10,13 @@
     <title>VSystem</title>
 </head>
 <body>
+    <!-- Encabezado con el texto primero y la imagen debajo -->
     <header>
-
-
+        <div id="logotipo">
+            <!-- Imagen debajo del título -->
+            <img src="{% static 'images/vsystem_.png' %}" alt="Logo VSystem">
+        </div>
     </header>
-
 
     <nav class="nav">
         <ul class="nav justify-content-center">
@@ -38,14 +40,19 @@
 
 
     <div id="content">
-
         <div class="box">
             {% block content %}
-              
-        
-        
-        
-            {% endblock  %}
+            <!-- Aquí es donde se mostrará el mensaje de bienvenida en la página de inicio -->
+            <div class="welcome-message">
+                <h1>Bienvenido al Sistema Académico VSystem</h1>
+                <p>Desde aquí podrás gestionar estudiantes, cursos y matrículas. Elige una opción en el menú de navegación para comenzar.</p>
+            </div>
+
+            <!-- Imagen debajo del texto -->
+            <div class="welcome-image">
+                <img src="{% static 'images/logo.jpg' %}" alt="Logo VSystem">
+            </div>
+            {% endblock %}
         </div>        
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
