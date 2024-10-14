@@ -1,10 +1,21 @@
 from django.shortcuts import render, redirect
 from .models import Persona
 from .forms import PersonaForm
+from django.db.models import Q
 
 # Vista para listar estudiantes
 def get_estudiantes(request):
-    estudiantes = Persona.objects.filter(rol='Estudiante')
+    query = request.GET.get('q')  # Obtiene el valor del campo de búsqueda
+    if query:
+        estudiantes = Persona.objects.filter(
+            Q(rol='Estudiante') &  # Asegúrate de que sean estudiantes
+            (Q(nombre__icontains=query) |  # Busca en nombre
+             Q(apellidos__icontains=query) |  # Busca en apellidos
+             Q(dni__icontains=query))  # Busca en DNI
+        )
+    else:
+        estudiantes = Persona.objects.filter(rol='Estudiante')  # Muestra todos si no hay filtro
+
     return render(request, 'lista-estudiantes.html', {
         'title': 'Lista de Estudiantes',
         'estudiantes': estudiantes
